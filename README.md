@@ -18,3 +18,14 @@ yarn @all build
 ```
 
 ### 4. Start coding
+Dev locally
+```
+yarn @api start:watch
+yarn @ui start:watch
+```
+
+Deploy
+```
+yarn docker:build:api
+yarn docker:build:ui
+```
