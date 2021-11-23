@@ -53,3 +53,5 @@ Now you can pull those docker images wherever you need them:
 ```
 docker pull ghcr.io/cctechwiz/kbst-app-go-prom:latest
 ```
+
+To create a docker image of a new package modify `.github/workflows/docker-publish.yml` and add a job for the new package.
