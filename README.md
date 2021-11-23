@@ -34,8 +34,22 @@ yarn @api start:watch
 yarn @ui start:watch
 ```
 
-Deploy
+Deploy locally
 ```
 yarn docker:build:api
 yarn docker:build:ui
+```
+
+### 6. Push changes
+Github Actions pipeline will automatically build api and ui docker images tagged with `:main`.
+
+To tag with latest add a release version tag:
+```
+git tag v0.1.1
+git push origin v0.1.1
+```
+
+Now you can pull those docker images wherever you need them:
+```
+docker pull ghcr.io/cctechwiz/kbst-app-go-prom:latest
 ```
