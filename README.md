@@ -6,3 +6,8 @@ A template project for quickly getting started with a Typescript monorepo includ
 2. Update dependencies in package.json to point API and UI to new shared scope
 3. Update paths in Dockerfile
 4. Update repo info and scripts in root level package.json
+
+Something like this should do the trick:
+```
+grep -Rl my-app . | xargs -o -l sed -i -e 's/my-app/NEW-APP-NAME/g'
+```
