@@ -1,0 +1,34 @@
+{
+  "name": "@my-app/root",
+  "version": "0.0.1",
+  "description": "A template project for quickly getting started with a Typescript monorepo including; shared, API, and UI packages.",
+  "repository": "git@github.com:cctechwiz/typescript-monorepo.git",
+  "author": "Josh Maxwell <cctechwiz@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/shared",
+    "packages/*"
+  ],
+  "scripts": {
+    "@all": "yarn workspaces run",
+    "@api": "yarn workspace @my-app/api",
+    "@shared": "yarn workspace @my-app/shared",
+    "@ui": "yarn workspace @my-app/ui",
+
+    "docker:build": "yarn docker:build:api && yarn docker:build:ui",
+    "docker:run": "yarn docker:run:api && yarn docker:run:ui",
+    "docker:clean": "yarn docker:clean:api && yarn docker:clean:ui",
+
+    "docker:build:api": "docker build -t my-app-api . --build-arg PKG=api",
+    "docker:build:ui": "docker build -t my-app-ui . --build-arg PKG=ui",
+    "docker:run:api": "docker run --rm -d -p 8080:8080 --name my-app-api my-app-api:latest",
+    "docker:run:ui": "docker run --rm -d -p 8080:8080 --name my-app-ui my-app-ui:latest",
+    "docker:clean:api": "docker rmi -f my-app-api",
+    "docker:clean:ui": "docker rmi -f my-app-ui"
+  },
+  "devDependencies": {
+    "tsc-watch": "^4.5.0",
+    "typescript": "^4.5.2"
+  }
+}

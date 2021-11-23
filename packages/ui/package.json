@@ -1,0 +1,21 @@
+{
+  "name": "@my-app/ui",
+  "version": "0.0.1",
+  "description": "UI",
+  "main": "dist/app.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@my-app/shared": "*"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  },
+  "scripts": {
+    "build": "tsc --build",
+    "clean": "rm -rf ./dist",
+    "build:clean": "yarn clean && yarn build",
+    "start": "node .",
+    "start:watch": "tsc-watch --build --noClear --onSuccess 'node .'"
+  }
+}

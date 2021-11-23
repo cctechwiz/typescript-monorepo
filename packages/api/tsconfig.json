@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+
+  "compilerOptions": {
+    "tsBuildInfoFile": "./dist/tsconfig.tsbuildinfo",
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "references": [
+    { "path": "../shared" }
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
