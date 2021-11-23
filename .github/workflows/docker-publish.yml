@@ -10,10 +10,10 @@ on:
 
 jobs:
   build-api:
-    uses: cctechwiz/typescript-monorepo/.github/workflows/build-publish.yml@v1
+    uses: cctechwiz/typescript-monorepo/.github/workflows/build-publish.yml
     with:
       package: api
   build-ui:
-    uses: cctechwiz/typescript-monorepo/.github/workflows/build-publish.yml@v1
+    uses: cctechwiz/typescript-monorepo/.github/workflows/build-publish.yml
     with:
       package: ui
